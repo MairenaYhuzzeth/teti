@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test de depresión UMBRAL</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        .pagina {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .caja {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #4b0082;
+        }
+
+        input[type="text"], input[list] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background-color: #4b0082;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #6a1b9a;
+        }
+
+        .pregunta-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #fafafa;
+        }
+
+        .pregunta-card p {
+            margin: 0 0 10px 0;
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        #resultado {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #e0ffe0;
+            border: 1px solid #8bc34a;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="pagina">
+        <div class="caja">
+            <h1>Test de depresión UMBRAL</h1>
+
+            <!-- FORMULARIO DE DATOS -->
+            <form id="formUsuario">
+                <label for="Nombre">Nombre:</label>
+                <input type="text" id="Nombre" placeholder="Nombre" required>
+
+                <label for="Apellido">Apellido:</label>
+                <input type="text" id="Apellido" placeholder="Apellido" required>
+
+                <label for="Edad">Edad:</label>
+                <input type="text" id="Edad" placeholder="Edad" required>
+
+                <label for="Carrera">Carrera:</label>
+                <input type="text" id="Carrera" placeholder="Carrera" required>
+
+                <label>Año:</label>
+                <input list="Añocursante" id="Anio" placeholder="Año cursante" required>
+                <datalist id="Añocursante">
+                    <option value="Primer año">
+                    <option value="Segundo año">
+                    <option value="Tercer año">
+                    <option value="Cuarto año">
+                    <option value="Quinto año">
+                    <option value="Sexto año">
+                </datalist>
+
+                <button type="button" onclick="mostrarPreguntas()">Siguiente</button>
+            </form>
+
+            <!-- PREGUNTAS -->
+            <div class="preguntas" id="preguntas" style="display:none;">
+                <h2>Responde las siguientes preguntas</h2>
+
+                <div class="pregunta-card">
+                    <p>1. ¿Con qué frecuencia te sientes mal?</p>
+                    <label><input type="radio" name="p1" value="1"> Nunca</label>
+                    <label><input type="radio" name="p1" value="2">A veces</label>
+                    <label><input type="radio" name="p1" value="3">Frecuentemente</label>
+                </div>
+
+                <div class="pregunta-card">
+                    <p>2. ¿Te sientes desanimado?</p>
+                    <label><input type="radio" name="p2" value="1">Nun
